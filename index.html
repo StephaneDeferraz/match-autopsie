@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Match, autopsie d'une chute</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour le titre */
+        .typewriter-title {
+            display: inline-block;
+            opacity: 1;
+            text-align: center;
+            margin: 0 auto;
+            font-family: 'Times New Roman', serif;
+            font-size: 2em;
+            white-space: nowrap;
+        }
+
+        /* Cache le texte initialement */
+        .typewriter-title span {
+            opacity: 0;
+        }
+
+        #delayed-button {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Match, autopsie d'une chute</h1>
+    <nav>
+        <a href="index.html" class="active">Accueil</a>
+        <a href="roman.html">Le roman</a>
+        <a href="personnages.html">Personnages</a>
+        <a href="extraits.html">Extraits</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <img src="images/couverture.png" class="hero-img">
+
+    <div class="overlay">
+        <h2 class="typewriter-title" id="animated-title">
+            <!-- Chaque lettre sera dans un span -->
+        </h2>
+
+        <p id="typed-text" class="typewriter-text">
+            <!-- Le texte sera inséré ici par JavaScript -->
+        </p>
+
+        <a href="roman.html" id="delayed-button">
+            <button>Entrer dans le dossier</button>
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 - Stéphane Deferraz - Les Éditions du Pangramme
+    </p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animation du titre (machine à écrire)
+        const titleElement = document.getElementById('animated-title');
+        const titleText = "Un match. Une arrestation. Une disparition.";
+        titleElement.innerHTML = ''; // Vide le contenu initial
+
+        // Crée un span pour chaque caractère
+        for (let i = 0; i < titleText.length; i++) {
+            const span = document.createElement('span');
+            span.textContent = titleText[i];
+            span.style.opacity = '0';
+            titleElement.appendChild(span);
+        }
+
+        // Animation lettre par lettre
+        const spans = titleElement.querySelectorAll('span');
+        let currentIndex = 0;
+
+        function showNextLetter() {
+            if (currentIndex < spans.length) {
+                spans[currentIndex].style.opacity = '1';
+                currentIndex++;
+                setTimeout(showNextLetter, 100); // 100ms par lettre
+            } else {
+                // Quand le titre est terminé, on lance l'animation du texte
+                setTimeout(animateText, 500);
+            }
+        }
+
+        // Animation du texte
+        function animateText() {
+            const textElement = document.getElementById('typed-text');
+            const fullText = "Une rencontre amicale controversée, à Moscou, censée promouvoir la paix entre les peuples...";
+            textElement.textContent = '';
+
+            let j = 0;
+            const textSpeed = 60; // 60ms par caractère
+
+            function typeText() {
+                if (j < fullText.length) {
+                    textElement.textContent += fullText.charAt(j);
+                    j++;
+                    setTimeout(typeText, textSpeed);
+                } else {
+                    // Quand le texte est terminé, on fait apparaître le bouton
+                    setTimeout(showButton, 1000);
+                }
+            }
+
+            typeText();
+        }
+
+        // Affichage du bouton
+        function showButton() {
+            const buttonElement = document.getElementById('delayed-button');
+            buttonElement.style.opacity = '1';
+            buttonElement.style.transform = 'translateY(0)';
+        }
+
+        // Démarre l'animation du titre
+        showNextLetter();
+    });
+</script>
+
+</body>
+</html>
