@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Univers du texte — Match, autopsie d'une chute</title>
+    <meta name="description" content="Plongez dans l'univers de Match, autopsie d'une chute : scandales, foot business, géopolitique, littérature et football.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Match, autopsie d'une chute</h1>
+    <nav class="nav-desktop">
+        <a href="index.html">Accueil</a>
+        <a href="roman.html">Le roman</a>
+        <a href="personnages.html">Personnages</a>
+        <a href="extraits.html">Extraits</a>
+        <a href="auteur.html">L'auteur</a>
+        <a href="univers.html" class="active">Univers du texte</a>
+    </nav>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+    <nav class="nav-mobile" id="nav-mobile">
+        <a href="index.html">Accueil</a>
+        <a href="roman.html">Le roman</a>
+        <a href="personnages.html">Personnages</a>
+        <a href="extraits.html">Extraits</a>
+        <a href="auteur.html">L'auteur</a>
+        <a href="univers.html" class="active">Univers du texte</a>
+    </nav>
+</header>
+
+<section class="page-univers">
+
+    <h2>Univers du texte</h2>
+    <p class="univers-intro">
+        <em>Match, autopsie d'une chute,</em> est une pure fiction, dont l'intrigue se suffit à elle-même. 
+        Toutefois, le lecteur désireux de confronter le texte à des réalités bien documentées trouvera 
+        dans les pages ci-dessous des développements sur des thèmes qui auraient pu inspirer l'auteur.
+    </p>
+
+    <div class="univers-grille">
+
+        <a href="scandales-football-mondial.html" class="univers-carte">
+            <div class="univers-carte-contenu">
+                <h3>Scandales du football mondial</h3>
+                <p>Corruption, matchs arrangés, affaires FIFA : les dessous d'un sport devenu industrie.</p>
+            </div>
+        </a>
+
+        <a href="foot-business.html" class="univers-carte">
+            <div class="univers-carte-contenu">
+                <h3>Le foot business</h3>
+                <p>Transferts pharaoniques, fonds souverains, clubs-vitrines : quand l'argent dicte le jeu.</p>
+            </div>
+        </a>
+
+        <a href="geopolitique-football.html" class="univers-carte">
+            <div class="univers-carte-contenu">
+                <h3>Géopolitique du football</h3>
+                <p>Le football comme instrument de puissance : diplomatie, soft power et rivalités nationales.</p>
+            </div>
+        </a>
+
+        <a href="football-litterature.html" class="univers-carte">
+            <div class="univers-carte-contenu">
+                <h3>Football et littérature</h3>
+                <p>De Camus à Soriano, ce que les écrivains ont vu dans le football que les autres n'ont pas vu.</p>
+            </div>
+        </a>
+
+        <a href="football-politique-ukraine.html" class="univers-carte">
+            <div class="univers-carte-contenu">
+                <h3>Football, Russie, Ukraine, Qatar</h3>
+                <p>Russie, Ukraine, Qatar : le football pris dans les tourments de l'histoire contemporaine.</p>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>© 2026 - Stéphane Deferraz - Les Éditions du Pangramme</p>
+        <img src="images/Logo.png" alt="Logo Éditions du Pangramme" class="footer-logo">
+    </div>
+</footer>
+
+<script src="Script.js"></script>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('nav-mobile');
+    hamburger.addEventListener('click', function () {
+        navMobile.classList.toggle('nav-mobile-open');
+    });
+</script>
+
+</body>
+</html>
