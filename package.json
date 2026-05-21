@@ -1,10 +1,7 @@
 {
   "name": "match-autopsie",
   "private": true,
-  "devDependencies": {
-    "sitemap-generator-cli": "^7.7.0"
-  },
   "scripts": {
-    "sitemap": "sitemap-generator https://match-autopsie.fr -o sitemap.xml"
+    "sitemap": "node generate-sitemap.js"
   }
 }
